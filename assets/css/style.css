@@ -159,21 +159,22 @@ section {
     position: fixed;
     top: 0;
     left: 0;
-    /* width: 300px; */
+    width: var(--sidebar-width);
     height: 100vh;
+
     background: var(--bg-dark);
+
     display: flex;
     flex-direction: column;
-    z-index: 1001;
-    transition: var(--transition);
-    width: var(--sidebar-width);
+
     overflow-y: auto;
+
     transform: translateX(0);
+
     transition: transform .35s ease;
 
+    z-index: 1001;
 }
-
-
 
 #main {
     margin-left: var(--sidebar-width);
@@ -203,11 +204,8 @@ section {
 }
 
 #sidebarOverlay.active {
-
     opacity: 1;
-
     visibility: visible;
-
 }
 
 #sidebarOverlay.active {
@@ -216,48 +214,26 @@ section {
 }
 
 .sidebar-toggle {
-    /* display:none; */
-
-    position: fixed;
-
-    top: 20px;
-
-    left: 20px;
-
-    width: 52px;
-
-    height: 52px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: #149ddd;
-
-    color: #fff;
-
-    font-size: 28px;
-
     display: none;
-
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 12px;
+    background: #149ddd;
+    color: #fff;
+    font-size: 28px;
     z-index: 1100;
-
     box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
-
 }
 
-@media(max-width:1199px) {
-    .sidebar-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 
-    #hero {
-        width: 100%;
-        margin-left: 0;
-    }
-}
+/* ==================================================
+   Mobile Sidebar
+================================================== */
+
 
 /*==============================================================
 # Section Title
@@ -585,30 +561,6 @@ section {
 # Mobile Sidebar
 ==============================================================*/
 
-/* @media(max-width:1199px) {
-    #header {
-        left: -300px;
-    }
-
-    #header.mobile-open {
-        left: 0;
-    }
-} */
-
-@media (max-width:1199px) {
-    #header {
-        transform: translateX(-100%);
-    }
-
-    #header.active {
-        transform: translateX(0);
-    }
-
-    #main {
-        margin-left: 0;
-    }
-
-}
 
 /*==============================================================
 # Hero
@@ -2091,32 +2043,11 @@ a:hover {
    Desktop (<1200px)
 ================================ */
 
-/* @media (max-width:1199px) {
-    #header {
-        left: -300px;
+@media (min-width:1200px) {
+    .mobile-nav-toggle {
+        display: none;
     }
-
-    #header.mobile-open {
-        left: 0;
-    }
-
-    #hero {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    main {
-        margin-left: 0;
-    }
-
-    .hero-container {
-        padding: 0 40px;
-    }
-
-    .section-title {
-        margin-bottom: 50px;
-    }
-} */
+}
 
 /* ===============================
    Tablet (<992px)
@@ -2231,16 +2162,42 @@ a:hover {
 @media (max-width:1199px) {
     #header {
         left: -280px;
+        transform: translateX(-100%);
     }
 
     #header.mobile-nav-active {
         left: 0;
     }
 
-    #hero,
-    main {
+    #hero {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #main {
         margin-left: 0;
         width: 100%;
+    }
+
+    #header {
+        left: -320px;
+        transition: .4s;
+    }
+
+    .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #header.active {
+        transform: translateX(0);
     }
 }
 
@@ -2376,75 +2333,4 @@ input:focus-visible,
 textarea:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 3px;
-}
-
-/* ==================================================
-   Mobile Sidebar
-================================================== */
-
-.mobile-nav-toggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--primary);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    cursor: pointer;
-    z-index: 9999;
-    transition: .3s;
-}
-
-.mobile-nav-toggle:hover {
-    background: #149ddd;
-}
-
-/* Sidebar */
-@media (max-width:1199px) {
-    #header {
-        left: -320px;
-        transition: .4s;
-    }
-
-    #header.mobile-nav-active {
-        left: 0;
-    }
-}
-
-/* Desktop */
-@media (min-width:1200px) {
-    .mobile-nav-toggle {
-        display: none;
-    }
-}
-
-@media (max-width:1199px) {
-    #main {
-        margin-left: 0;
-    }
-}
-
-.sidebar-toggle {
-
-    display: none;
-
-}
-
-@media (max-width:1199px) {
-
-    .sidebar-toggle {
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-    }
-
 }
