@@ -164,7 +164,7 @@ section {
     background: var(--bg-dark);
     display: flex;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 1001;
     transition: var(--transition);
     width: var(--sidebar-width);
     overflow-y: auto;
@@ -213,6 +213,7 @@ section {
 }
 
 .sidebar-toggle {
+    /* display:none; */
 
     position: fixed;
 
@@ -2424,13 +2425,28 @@ textarea:focus-visible {
     }
 }
 
-#main {
-    margin-left: 320px;
-    transition: .3s;
-}
-
 @media (max-width:1199px) {
     #main {
         margin-left: 0;
     }
+}
+
+.sidebar-toggle{
+
+display:none;
+
+}
+
+@media (max-width:1199px){
+
+.sidebar-toggle{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
 }
