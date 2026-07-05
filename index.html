@@ -780,7 +780,7 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/purecounterjs/dist/purecounter_vanilla.js"></script>
   <script>   
-
+    // 1. Logika untuk Active Link saat di-scroll
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("#navbar .nav-link");
 
@@ -789,8 +789,7 @@
       sections.forEach(section => {
         const top = section.offsetTop - 100;
         const height = section.offsetHeight;
-        if (window.scrollY >= top &&
-          window.scrollY < top + height) {
+        if (window.scrollY >= top && window.scrollY < top + height) {
           current = section.id;
         }
       });
@@ -803,42 +802,40 @@
       });
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
+    // Fungsi pembantu untuk menutup sidebar & mereset ikon (karena dihandle global)
+    function closeSidebar() {
       const sidebar = document.getElementById("header");
       const overlay = document.getElementById("sidebarOverlay");
       const toggle = document.getElementById("sidebarToggle");
 
+      if (sidebar) sidebar.classList.remove("active");
+      if (overlay) overlay.classList.remove("active");
+      
+      // Kembalikan ikon hamburger menjadi garis tiga
       if (toggle) {
-        toggle.addEventListener("click", () => {
-          sidebar.classList.toggle("active");
-          overlay.classList.toggle("active");
-        });
+        const icon = toggle.querySelector("i");
+        if (icon) {
+          icon.classList.remove("bi-x");
+          icon.classList.add("bi-list");
+        }
       }
+    }
 
-      if (overlay) {
-        overlay.addEventListener("click", () => {
-          sidebar.classList.remove("active");
-          overlay.classList.remove("active");
-        });
-      }
-    });
-
+    // 2. Logika ketika menu link diklik (di layar < 1200px otomatis menutup sidebar)
     document.querySelectorAll("#navbar a").forEach(link => {
       link.addEventListener("click", () => {
         if (window.innerWidth < 1200) {
-          sidebar.classList.remove("active");
-          overlay.classList.remove("active");
+          closeSidebar();
         }
       });
     });
 
+    // 3. Logika ketika layar di-resize ke ukuran desktop (otomatis membersihkan class mobile)
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 1200) {
-        sidebar.classList.remove("active");
-        overlay.classList.remove("active");
+        closeSidebar();
       }
     });
-
   </script>
 </body>
 </html>

@@ -2162,7 +2162,9 @@ a:hover {
 @media (max-width:1199px) {
     #header {
         left: -280px;
+        /* left: -320px; */
         transform: translateX(-100%);
+        transition: .4s;
     }
 
     #header.mobile-nav-active {
@@ -2182,11 +2184,6 @@ a:hover {
         width: 100%;
     }
 
-    #header {
-        left: -320px;
-        transition: .4s;
-    }
-
     .sidebar-toggle {
         display: flex;
         align-items: center;
@@ -2201,6 +2198,7 @@ a:hover {
 
     #header.active {
         transform: translateX(0);
+        left: 0;
     }
 }
 
