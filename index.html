@@ -43,74 +43,95 @@
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
+  
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/profile.jpeg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light">
-          <a href="index.html">Kharis<br>Sya'ban G.</a>
+    <!-- ===== Profile ===== -->
+    <div class="sidebar-top">
+      <div class="profile text-center">
+        <img src="assets/img/profile.jpeg" alt="Kharis Syaban" class="img-fluid rounded-circle img-hover">
+        <h1 class="profile-name">
+          <a href="#hero">Kharis Syaban</a>
         </h1>
-        <p class="profile-title">Lecturer • AI Researcher</p>
-        <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/kSyaban" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://facebook.com/k.syaban" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/k_syaban" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://github.com/ksyaban" class="github"><i class="bx bxl-github"></i></a>
-          <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
-          <a href="www.linkedin.com/in/kharis-syaban-a9ab2020b" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li>
-            <a href="#hero" class="nav-link scrollto active">
-              <i class='bx bx-home-alt'></i>
-              <span>Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="#about" class="nav-link scrollto">
-              <i class='bx bx-user-circle'></i>
-              <span>About</span>
-            </a>
-          </li>
-          <li>
-            <a href="#resume" class="nav-link scrollto">
-              <i class='bx bx-id-card'></i>
-              <span>Resume</span>
-            </a>
-          </li>
-          <li>
-            <a href="#portfolio" class="nav-link scrollto">
-              <i class='bx bx-briefcase-alt-2'></i>
-              <span>Portfolio</span>
-            </a>
-          </li>
-          <li>
-            <a href="#services" class="nav-link scrollto">
-              <i class='bx bx-chip'></i>
-              <span>Expertise</span>
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="nav-link scrollto">
-              <i class='bx bx-envelope-open'></i>
-              <span>Contact</span>
-            </a>
-          </li>
-        </ul>
-      </nav><!-- .nav-menu -->
-      <div class="sidebar-footer">
-        <p>© 2026</p>
-        <p>Kharis Sya'ban G., M.Cs.</p>
-        <p>AI Research Lab</p>
+        <p class="profile-title">
+          Lecturer • AI Researcher
+        </p>
+
+        <!-- <small class="profile-affiliation">
+          Universitas Sembilanbelas November Kolaka
+        </small> -->
       </div>
     </div>
-  </header><!-- End Header -->
+
+    <!-- ===== Navigation ===== -->
+    <nav id="navbar" class="nav-menu navbar">
+      <ul>
+        <li>
+          <a href="#hero" class="nav-link scrollto active">
+            <i class="bi bi-house-door-fill"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="nav-link scrollto">
+            <i class="bi bi-person-circle"></i>
+            <span>About Me</span>
+          </a>
+        </li>
+        <li>
+          <a href="#resume" class="nav-link scrollto">
+            <i class="bi bi-mortarboard-fill"></i>
+            <span>Academic Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="#portfolio" class="nav-link scrollto">
+            <i class="bi bi-kanban-fill"></i>
+            <span>Research & Projects</span>
+          </a>
+        </li>
+        <li>
+          <a href="#services" class="nav-link scrollto">
+            <i class="bi bi-cpu-fill"></i>
+            <span>Expertise</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-link scrollto">
+            <i class="bi bi-envelope-fill"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ===== Sidebar Footer ===== -->
+    <div class="sidebar-bottom">
+      <div class="sidebar-social">
+        <a href="https://scholar.google.com" target="_blank" title="Google Scholar">
+          <i class="bi bi-mortarboard"></i>
+        </a>
+        <a href="https://orcid.org/" target="_blank" title="ORCID">
+          <i class="bi bi-award"></i>
+        </a>
+        <a href="https://github.com/ksyaban" target="_blank" title="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kharis-syaban-a9ab2020b" target="_blank" title="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      </div>
+
+      <!-- <div class="sidebar-action">
+        <a href="assets/files/CV-Kharis-Syaban.pdf" class="btn btn-primary btn-sm w-100" target="_blank">
+          <i class="bi bi-download me-2"></i>
+          Download CV
+        </a>
+      </div> -->
+    </div>
+  </header>
+  <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -830,42 +851,42 @@
     new PureCounter();
 
     const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll("#navbar .nav-link");
+    const navLinks = document.querySelectorAll("#navbar .nav-link");
 
-window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", () => {
 
-    let current = "";
+      let current = "";
 
-    sections.forEach(section => {
+      sections.forEach(section => {
 
         const top = section.offsetTop - 120;
         const height = section.offsetHeight;
 
         if (window.scrollY >= top &&
-            window.scrollY < top + height) {
+          window.scrollY < top + height) {
 
-            current = section.getAttribute("id");
+          current = section.getAttribute("id");
 
         }
 
-    });
+      });
 
-    navLinks.forEach(link => {
+      navLinks.forEach(link => {
 
         link.classList.remove("active");
 
-        if(link.getAttribute("href")==="#"+current){
+        if (link.getAttribute("href") === "#" + current) {
 
-            link.classList.add("active");
+          link.classList.add("active");
 
         }
 
-    });
+      });
 
-});
+    });
   </script>
 
-  
+
 </body>
 
 </html>
