@@ -36,7 +36,7 @@
     --transition: .35s ease;
     --transition-slow: .55s ease;
 
-    --sidebar-width:280px;
+    --sidebar-width: 280px;
 }
 
 /*==============================================================
@@ -56,8 +56,8 @@ html {
     scroll-padding-top: 80px;
 }
 
-main{
-    margin-left:var(--sidebar-width);
+main {
+    margin-left: var(--sidebar-width);
 }
 
 body {
@@ -166,7 +166,7 @@ section {
     flex-direction: column;
     z-index: 1000;
     transition: var(--transition);
-    width:var(--sidebar-width);
+    width: var(--sidebar-width);
 }
 
 #header.collapsed {
@@ -303,6 +303,41 @@ section {
     font-size: 15px;
     color: #9fb3c8;
     margin-bottom: 25px;
+}
+
+/*==============================================================
+# About Profile Card
+==============================================================*/
+
+.profile-card{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.profile-image{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid #ffffff;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    transition:.4s ease;
+}
+
+.profile-image:hover{
+    transform:scale(1.03);
+}
+
+.profile-card h3{
+    margin-top:25px;
+    font-size:1.7rem;
+    font-weight:700;
+    color:var(--secondary);
+}
+
+.profile-card p{
+    margin-top:8px;
+    color:var(--text-light);
 }
 
 /*==============================================================
@@ -445,9 +480,9 @@ section {
 
 #hero {
     position: relative;
-    width:calc(100% - var(--sidebar-width));
+    width: calc(100% - var(--sidebar-width));
     height: 100vh;
-    margin-left:var(--sidebar-width);
+    margin-left: var(--sidebar-width);
     display: flex;
     align-items: center;
     background-position: center;
@@ -923,116 +958,216 @@ section {
 # Portfolio Card
 ==============================================================*/
 
-.portfolio-wrap {
-    position: relative;
+/*==============================================================
+# Portfolio
+==============================================================*/
+
+.portfolio {
+    background: #f8fafc;
+}
+
+.portfolio-container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+
+}
+
+/* Card */
+
+.portfolio-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    border-radius: 18px;
-    background: #fff;
     box-shadow: var(--shadow);
     transition: var(--transition);
-}
-
-.portfolio-wrap img {
     width: 100%;
-    transition: transform .6s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.portfolio-wrap:hover {
-    transform: translateY(-10px);
+.portfolio-card:hover {
+    transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
 
-.portfolio-wrap:hover img {
+/* Image */
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    aspect-ratio: 16/9;
+    background: #eef4fb;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+    display: block;
+}
+
+.portfolio-card:hover .portfolio-image img {
     transform: scale(1.08);
 }
 
-/*==============================================================
-# Portfolio Overlay
-==============================================================*/
+/* Category Badge */
 
-.portfolio-wrap::before {
-    content: "";
+.portfolio-category {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(to top,
-            rgba(4, 11, 20, .90),
-            rgba(4, 11, 20, .15));
-    opacity: 0;
-    transition: var(--transition);
-    z-index: 1;
-}
-
-.portfolio-wrap:hover::before {
-    opacity: 1;
-}
-
-/*==============================================================
-# Portfolio Info
-==============================================================*/
-
-.portfolio-info {
-    position: absolute;
-    left: 25px;
-    bottom: 25px;
-    z-index: 2;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: var(--transition);
-}
-
-.portfolio-wrap:hover .portfolio-info {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.portfolio-info h4 {
+    top: 16px;
+    left: 16px;
+    padding: 6px 14px;
+    border-radius: 50px;
     color: #fff;
-    font-size: 22px;
-    margin-bottom: 8px;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .3px;
 }
 
-.portfolio-info p {
-    color: #ddd;
-    margin: 0;
+/* Badge Colors */
+
+.portfolio-category.research {
+    background: #2563eb;
 }
 
-/*==============================================================
-# Portfolio Links
-==============================================================*/
+.portfolio-category.ml {
+    background: #16a34a;
+}
 
-.portfolio-links {
-    position: absolute;
-    right: 20px;
-    top: 20px;
+.portfolio-category.dl {
+    background: #dc2626;
+}
+
+.portfolio-category.cv {
+    background: #0891b2;
+}
+
+.portfolio-category.web {
+    background: #7c3aed;
+}
+
+.portfolio-category.book {
+    background: #ea580c;
+}
+
+.portfolio-category.teaching {
+    background: #0f766e;
+}
+
+/* Content */
+
+.portfolio-content {
+    padding: 24px;
     display: flex;
-    gap: 12px;
-    z-index: 3;
-    opacity: 0;
-    transform: translateY(-15px);
-    transition: var(--transition);
+    flex-direction: column;
+    flex: 1;
 }
 
-.portfolio-links a {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: rgba(20, 157, 221, .95);
+.portfolio-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.portfolio-content p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex: 1;
+
+}
+
+/* Tags */
+
+.portfolio-tags {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.portfolio-tags span {
+    padding: 6px 12px;
+
+    border-radius: 30px;
+
+    background: #eef5ff;
+
+    color: var(--primary);
+
+    font-size: .75rem;
+
+    font-weight: 600;
+}
+
+/* Action */
+
+.portfolio-action {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 12px;
+}
+
+.portfolio-action .btn {
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.portfolio-action .btn-light {
+    border: 1px solid #dbe3eb;
+    background: #fff;
+}
+
+.portfolio-action .btn-light:hover {
+    background: var(--primary);
+    border-color: var(--primary);
     color: #fff;
-    font-size: 20px;
-    transition: var(--transition);
 }
 
-.portfolio-links a:hover {
-    background: #0d6efd;
-    transform: scale(1.08);
+.portfolio-action .btn-primary {
+    flex: 1;
 }
 
-.portfolio-wrap:hover .portfolio-links {
-    opacity: 1;
-    transform: translateY(0);
+/* Hover */
+
+.portfolio-card:hover .portfolio-category {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+    .portfolio-image {
+        height: 200px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .portfolio-content {
+        padding: 20px;
+    }
+
+    .portfolio-action {
+        flex-direction: column;
+    }
+
+    .portfolio-action .btn {
+        width: 100%;
+    }
+
 }
 
 /*==============================================================
@@ -1048,8 +1183,6 @@ section {
     font-size: 13px;
     font-weight: 600;
 }
-
-
 
 /*==============================================================
 # Expertise & Services
@@ -1627,7 +1760,6 @@ a:hover {
 
 .card,
 .icon-box,
-.portfolio-wrap,
 .resume-item,
 .contact-card {
     will-change: transform;
@@ -1961,18 +2093,18 @@ a:hover {
 ================================ */
 
 @media (max-width:1199px) {
-    #header{
-        left:-280px;
+    #header {
+        left: -280px;
     }
 
-    #header.mobile-nav-active{
-        left:0;
+    #header.mobile-nav-active {
+        left: 0;
     }
 
     #hero,
-    main{
-        margin-left:0;
-        width:100%;
+    main {
+        margin-left: 0;
+        width: 100%;
     }
 }
 
@@ -2093,7 +2225,6 @@ a:hover {
 
 .resume-item,
 .icon-box,
-.portfolio-wrap,
 .contact-card {
     transition: var(--transition);
 }

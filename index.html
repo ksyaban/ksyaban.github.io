@@ -43,7 +43,7 @@
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-  
+
   <!-- ======= Header ======= -->
   <header id="header">
     <!-- ===== Profile ===== -->
@@ -53,14 +53,11 @@
         <h1 class="profile-name">
           <a href="#hero">Kharis Syaban</a>
         </h1>
+        <p class="profile-title">Lecturer • AI Researcher</p>
 
-        <p class="profile-title">
-          Lecturer • AI Researcher
-        </p>
-
-        <!-- <small class="profile-affiliation">
+        <small class="profile-affiliation">
           Universitas Sembilanbelas November Kolaka
-        </small> -->
+        </small>
       </div>
     </div>
 
@@ -180,20 +177,13 @@
         </a>
       </div>
       <div class="scroll-down">
-
-        <a href="#about">
-
-          <i class="bi bi-chevron-double-down"></i>
-
-        </a>
-
+        <a href="#about"><i class="bi bi-chevron-double-down"></i></a>
       </div>
     </div>
   </section>
   <!-- End Hero -->
 
   <main id="main">
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
@@ -201,7 +191,8 @@
           <!-- FOTO -->
           <div class="col-lg-4 text-center" data-aos="zoom-in">
             <div class="profile-card">
-              <img src="assets/img/profile.jpeg" class="img-fluid rounded-circle profile-image">
+              <img src="assets/img/profile.jpeg" alt="Kharis Syaban" class="img-fluid rounded-circle profile-image"
+                loading="lazy">
               <h3 class="mt-4">Kharis Sya'ban G., M.Cs.</h3>
               <p class="typing">
                 Lecturer • AI Researcher • Machine Learning Expert
@@ -314,17 +305,6 @@
             adaptif,
             inovatif, dan relevan dengan perkembangan teknologi digital.
           </p>
-          <!-- <h5>Fokus & Minat Riset (Research Interests)</h5>
-          <div class="research-tags">          
-            <span class="badge bg-primary">Machine Learning</span>          
-            <span class="badge bg-success">Deep Learning</span>          
-            <span class="badge bg-danger">Neural Networks</span>          
-            <span class="badge bg-warning text-dark">Computer Vision</span>          
-            <span class="badge bg-info text-dark">NLP</span>          
-            <span class="badge bg-secondary">Data Mining</span>          
-            <span class="badge bg-dark">Decision Support System</span>          
-            <span class="badge bg-primary">GIS</span>          
-          </div> -->
         </div>
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
@@ -333,18 +313,9 @@
               <h4>Kharis Sya'ban G.</h4>
               <p><em>"Explore, Innovate, Inspire. Embracing the limitless possibilities of technology."</em></p>
               <ul class="list-unstyled">
-                <li>
-                  <i class="bi bi-geo-alt-fill"></i>
-                  Jl. Pemuda, Kolaka
-                </li>
-                <li>
-                  <i class="bi bi-envelope-fill"></i>
-                  ksyaban@usn.ac.id
-                </li>
-                <li>
-                  <i class="bi bi-globe"></i>
-                  https://ksyaban.github.io
-                </li>
+                <li><i class="bi bi-geo-alt-fill"></i>Jl. Pemuda, Kolaka</li>
+                <li><i class="bi bi-envelope-fill"></i>ksyaban@usn.ac.id</li>
+                <li><i class="bi bi-globe"></i>https://ksyaban.github.io</li>
               </ul>
             </div>
             <h3 class="resume-title">Education</h3>
@@ -438,7 +409,7 @@
           </p>
         </div>
 
-        <div class="row" data-aos="fade-up">
+        <!-- <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">
@@ -458,143 +429,101 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4 portfolio-container">
+          <!-- ================= Project 1 ================= -->
           <div class="col-lg-4 col-md-6 portfolio-item filter-research">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/cbr-svm.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
+            <div class="portfolio-card card hover-lift">
+              <div class="portfolio-image">
+                <img src="assets/img/portfolio/portfolio-img.jpeg" alt="Hybrid CBR-SVM" class="img-fluid">
+                <span class="portfolio-category research">
+                  Research
+                </span>
+              </div>
+              <div class="portfolio-content">
                 <h4>Hybrid CBR-SVM</h4>
-                <p>Artificial Intelligence</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/cbr-svm.jpg" class="portfolio-lightbox" title="Hybrid CBR-SVM">
-                  <i class="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-cbr.html">
-                  <i class="bx bx-link"></i>
-                </a>
+                <!-- <p>
+                  Hybrid Case-Based Reasoning dan Support Vector Machine
+                  untuk diagnosis praklinik stroke.
+                </p> -->
+                <div class="portfolio-tags">
+                  <span>AI</span>
+                  <span>CBR</span>
+                  <span>SVM</span>
+                </div>
+                <div class="portfolio-action">
+                  <a href="assets/img/portfolio/portfolio-img.jpeg" class="btn btn-sm btn-light portfolio-lightbox">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </a>
+                  <a href="portfolio-cbr.html" class="btn btn-primary">
+                    Detail
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- ================= Project 2 ================= -->
           <div class="col-lg-4 col-md-6 portfolio-item filter-research">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/diabetes.jpg" class="img-fluid">
-              <div class="portfolio-info">
+            <div class="portfolio-card card hover-lift">
+              <div class="portfolio-image">
+                <img src="assets/img/portfolio/portfolio-img.jpeg" alt="Diabetes Prediction" class="img-fluid">
+                <span class="portfolio-category ml">
+                  Machine Learning
+                </span>
+              </div>
+              <div class="portfolio-content">
                 <h4>Diabetes Prediction</h4>
-                <p>Machine Learning</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/diabetes.jpg" class="portfolio-lightbox">
-                  <i class="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-diabetes.html">
-                  <i class="bx bx-link"></i>
-                </a>
+                <!-- <p>
+                  Ensemble Learning dan Explainable AI untuk
+                  prediksi risiko diabetes.
+                </p> -->
+                <div class="portfolio-tags">
+                  <span>Python</span>
+                  <span>Scikit-Learn</span>
+                  <span>MLflow</span>
+                </div>
+                <div class="portfolio-action">
+                  <a href="assets/img/portfolio/portfolio-img.jpeg" class="btn btn-sm btn-light portfolio-lightbox">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </a>
+                  <a href="portfolio-diabetes.html" class="btn btn-primary">
+                    Detail
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- ================= Project 3 ================= -->
           <div class="col-lg-4 col-md-6 portfolio-item filter-research">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/sentiment.jpg" class="img-fluid">
-              <div class="portfolio-info">
-                <h4>Sentiment Analysis using IndoBERT</h4>
-                <p>Deep Learning</p>
+            <div class="portfolio-card card hover-lift">
+              <div class="portfolio-image">
+                <img src="assets/img/portfolio/portfolio-img.jpeg" alt="Sentiment Analysis" class="img-fluid">
+                <span class="portfolio-category dl">
+                  Deep Learning
+                </span>
               </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/sentiment.jpg" class="portfolio-lightbox">
-                  <i class="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-sentiment.html">
-                  <i class="bx bx-link"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-software">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/gis.jpg" class="img-fluid">
-              <div class="portfolio-info">
-                <h4>GIS KKN Distribution</h4>
-                <p>Web GIS</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/gis.jpg" class="portfolio-lightbox">
-                  <i class="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-gis.html">
-                  <i class="bx bx-link"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-software">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/dss.jpg" class="img-fluid">
-              <div class="portfolio-info">
-                <h4>Decision Support System</h4>
-                <p>AHP & MPE</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/dss.jpg" class="portfolio-lightbox">
-                  <i class="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-dss.html">
-                  <i class="bx bx-link"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-publication">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/web-book.jpg" class="img-fluid">
-              <div class="portfolio-info">
-                <h4>Buku Ajar Pemrograman Web II</h4>
-                <p>Book</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/web-book.jpg" class="portfolio-lightbox">
-                  <i class="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-book.html">
-                  <i class="bx bx-link"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-teaching">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/teaching.jpg" class="img-fluid">
-              <div class="portfolio-info">
-                <h4>Teaching Portfolio</h4>
-                <p>Computer Science</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/teaching.jpg" class="portfolio-lightbox">
-                  <i class="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-teaching.html">
-                  <i class="bx bx-link"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-research">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/computer-vision.jpg" class="img-fluid">
-              <div class="portfolio-info">
-                <h4>Computer Vision</h4>
-                <p>Deep Learning</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/computer-vision.jpg" class="portfolio-lightbox">
-                  <i class="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-cv.html">
-                  <i class="bx bx-link"></i>
-                </a>
+              <div class="portfolio-content">
+                <h4>Sentiment Analysis</h4>
+                <!-- <p>
+                  Analisis sentimen Bahasa Indonesia menggunakan
+                  IndoBERT dan Transformer.
+                </p> -->
+                <div class="portfolio-tags">
+                  <span>IndoBERT</span>
+                  <span>PyTorch</span>
+                  <span>NLP</span>
+                </div>
+                <div class="portfolio-action">
+                  <a href="assets/img/portfolio/portfolio-img.jpeg" class="btn btn-sm btn-light portfolio-lightbox">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </a>
+                  <a href="portfolio-sentiment.html" class="btn btn-primary">
+                    Detail
+                  </a>
+                </div>
               </div>
             </div>
           </div>
