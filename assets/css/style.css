@@ -80,7 +80,8 @@ h6 {
   transition: all 0.5s;
   padding: 0 15px;
   background: #040b14;
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  overflow:hidden;
 }
 
 #header .profile img {
@@ -131,11 +132,11 @@ h6 {
   margin-left: 300px;
 }
 
-.container,
+/* .container,
 .container-fluid {
   padding-left: 30px;
   padding-right: 30px;
-}
+} */
 
 @media (max-width: 1199px) {
   #header {
@@ -157,8 +158,12 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
-.nav-menu {
-  padding: 30px 0 0 0;
+.nav-menu ul {
+  padding-top: 30px;
+}
+
+.nav-menu li {
+  margin-bottom: 10px;
 }
 
 .nav-menu * {
@@ -172,7 +177,15 @@ h6 {
   white-space: nowrap;
 }
 
-.nav-menu a,
+.nav-menu a {
+
+  border-radius: 10px;
+  transition: .3s;
+  padding: 14px 18px;
+  margin-bottom: 6px;
+}
+
+
 .nav-menu a:focus {
   display: flex;
   align-items: center;
@@ -183,6 +196,7 @@ h6 {
   font-size: 15px;
 }
 
+
 .nav-menu a i,
 .nav-menu a:focus i {
   font-size: 24px;
@@ -190,8 +204,22 @@ h6 {
   color: #6f7180;
 }
 
-.nav-menu a:hover,
-.nav-menu .active,
+.nav-menu a:hover {
+
+  background: #149ddd20;
+
+}
+
+.nav-menu .active {
+
+  background: #149ddd20;
+
+  color: #149ddd;
+
+  border-left: 4px solid #149ddd;
+
+}
+
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
   text-decoration: none;
@@ -239,11 +267,19 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
+  width: calc(100% - 300px);
+  margin-left: 300px;
+  padding: 0 70px;
   height: 100vh;
-  background: url("../img/bg-large.jpg") top center;
+  background: url("../img/bg-large.png") top center;
   background-size: cover;
+
 }
+
+/* #hero {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+} */
 
 #hero:before {
   content: "";
@@ -256,11 +292,11 @@ h6 {
   z-index: 1;
 }
 
-#hero .hero-container {
+/* #hero .hero-container {
   position: relative;
   z-index: 2;
   min-width: 300px;
-}
+} */
 
 #hero h1 {
   margin: 0 0 10px 0;
@@ -1103,4 +1139,742 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+.portfolio-info {
+  background: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.portfolio-info p {
+  font-size: 14px;
+  color: #149ddd;
+  margin-bottom: 0;
+}
+
+.portfolio-wrap {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: .4s;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+}
+
+.portfolio-wrap:hover {
+  transform: translateY(-8px);
+}
+
+.portfolio-wrap img {
+  transition: .5s;
+}
+
+.portfolio-wrap:hover img {
+  transform: scale(1.08);
+}
+
+/*==============================================================
+# Expertise & Services
+==============================================================*/
+
+.services {
+  padding: 80px 0;
+  background: #fff;
+}
+
+/* ---------- Section Title ---------- */
+
+.services .section-title {
+  margin-bottom: 25px;
+}
+
+.services .section-title h2 {
+  font-weight: 700;
+}
+
+.services .section-title p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ---------- Technology Stack ---------- */
+
+.tech-stack {
+  text-align: center;
+  margin: 35px 0 60px;
+}
+
+.tech-stack .badge {
+  margin: 5px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: all .3s ease;
+}
+
+.tech-stack .badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+}
+
+/* ---------- Card Layout ---------- */
+
+.services .row {
+  row-gap: 25px;
+}
+
+.services .icon-box {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 18px;
+  padding: 30px;
+  height: 100%;
+  transition: all .35s ease;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
+  border-top: 4px solid transparent;
+}
+
+.services .icon-box:hover {
+  transform: translateY(-8px);
+  border-top-color: #149ddd;
+  box-shadow: 0 20px 45px rgba(20, 157, 221, .18);
+}
+
+/* ---------- Icon ---------- */
+
+.services .icon {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  border-radius: 50%;
+  background: #149ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 22px;
+  transition: all .35s ease;
+}
+
+.services .icon i {
+  color: #fff;
+  font-size: 28px;
+}
+
+.services .icon-box:hover .icon {
+  background: #0d6efd;
+  transform: rotate(-12deg) scale(1.08);
+}
+
+/* ---------- Text ---------- */
+
+.services .title {
+  margin-bottom: 10px;
+}
+
+.services .title a,
+.services h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c4964;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.services .title a:hover {
+  color: #149ddd;
+}
+
+.services .description,
+.services p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 992px) {
+
+  .services .icon-box {
+    padding: 25px;
+  }
+
+  .services .icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    margin-right: 18px;
+  }
+
+  .services .icon i {
+    font-size: 24px;
+  }
+
+  .services h4,
+  .services .title a {
+    font-size: 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .services {
+    padding: 60px 0;
+  }
+
+  .services .icon-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .services .icon {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .services .description,
+  .services p {
+    font-size: 15px;
+  }
+
+  .tech-stack {
+    margin: 30px 0 40px;
+  }
+
+}
+
+/*==============================================================
+# Contact Section
+==============================================================*/
+
+.contact {
+  padding: 80px 0;
+  background: #fff;
+}
+
+/*--------------------------------------------------------------
+# Section Title
+--------------------------------------------------------------*/
+
+.contact .section-title {
+  margin-bottom: 40px;
+}
+
+.contact .section-title h2 {
+  font-weight: 700;
+}
+
+.contact .section-title p {
+  max-width: 950px;
+  margin: auto;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/*--------------------------------------------------------------
+# Contact Information Card
+--------------------------------------------------------------*/
+
+.contact .info {
+  background: #fff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.contact .contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.contact .contact-item:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Contact Icon
+--------------------------------------------------------------*/
+
+.contact .contact-item i {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+  border-radius: 50%;
+  background: #149ddd;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  margin-right: 18px;
+  transition: all .3s ease;
+}
+
+.contact .contact-item:hover i {
+  background: #0d6efd;
+  transform: scale(1.08);
+}
+
+/*--------------------------------------------------------------
+# Contact Text
+--------------------------------------------------------------*/
+
+.contact .contact-item h4 {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c4964;
+}
+
+.contact .contact-item p,
+.contact .contact-item a {
+  margin: 0;
+  color: #666;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.contact .contact-item a:hover {
+  color: #149ddd;
+}
+
+/*--------------------------------------------------------------
+# Contact Form
+--------------------------------------------------------------*/
+
+.contact .php-email-form {
+  background: #fff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
+  height: 100%;
+}
+
+.contact .php-email-form h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.contact .php-email-form p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/*--------------------------------------------------------------
+# Input & Textarea
+--------------------------------------------------------------*/
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 15px;
+  transition: all .3s ease;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: #149ddd;
+  box-shadow: 0 0 10px rgba(20, 157, 221, .15);
+  outline: none;
+}
+
+.contact .php-email-form textarea {
+  resize: vertical;
+}
+
+/*--------------------------------------------------------------
+# Button
+--------------------------------------------------------------*/
+
+.contact .php-email-form button {
+  background: #149ddd;
+  border: none;
+  color: #fff;
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all .3s ease;
+}
+
+.contact .php-email-form button:hover {
+  background: #0d6efd;
+  transform: translateY(-3px);
+}
+
+/*--------------------------------------------------------------
+# Google Maps
+--------------------------------------------------------------*/
+
+.contact iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: 18px;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+
+@media (max-width: 992px) {
+  .contact .info {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact .info,
+  .contact .php-email-form {
+    padding: 25px;
+  }
+
+  .contact .contact-item {
+    margin-bottom: 25px;
+  }
+
+  .contact .contact-item i {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    font-size: 20px;
+  }
+
+  .contact .contact-item h4 {
+    font-size: 18px;
+  }
+
+  .contact iframe {
+    height: 300px;
+  }
+
+}
+
+/*==============================================================
+# Collaboration Card
+==============================================================*/
+
+.collaboration-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .08);
+  width: 100%;
+}
+
+.cta-header {
+  text-align: center;
+}
+
+.cta-header i {
+  font-size: 60px;
+  color: #149ddd;
+  margin-bottom: 15px;
+}
+
+.cta-header h3 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.cta-header p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.cta-body {
+  margin-top: 25px;
+}
+
+.cta-body h5 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cta-tags .badge {
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.cta-buttons {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.cta-buttons .btn {
+  border-radius: 40px;
+  padding: 12px 25px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.cta-buttons .btn:hover {
+  transform: translateY(-4px);
+}
+
+blockquote {
+  border-left: 4px solid #149ddd;
+  padding-left: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/*==============================================================
+# Hero Section
+==============================================================*/
+
+#hero {
+  margin-left: 300px;
+  padding: 0 70px;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width:1199px) {
+  #hero {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 30px;
+  }
+
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .55);
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero-container h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero-container h2 {
+  font-size: 34px;
+  font-weight: 600;
+  color: #149ddd;
+  margin-bottom: 25px;
+}
+
+.hero-container p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #ecf0f1;
+}
+
+.hero-btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.hero-btn .btn {
+  border-radius: 50px;
+  padding: 12px 28px;
+  font-weight: 600;
+}
+
+.hero-social {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-social a {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .15);
+  color: white;
+  font-size: 22px;
+  transition: .3s;
+}
+
+.hero-social a:hover {
+  background: #149ddd;
+  transform: translateY(-5px);
+}
+
+.scroll-down {
+  margin-top: 60px;
+}
+
+.scroll-down a {
+  color: white;
+  font-size: 40px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+
+}
+
+.profile img {
+  width: 145px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, .15);
+  transition: .3s;
+
+}
+
+.profile img:hover {
+  transform: scale(1.05);
+}
+
+.profile-title {
+  color: #9fb3c8;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.social-links {
+
+  margin-top: 25px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+}
+
+.social-links a:hover {
+
+  background: #149ddd;
+
+  transform: translateY(-3px);
+
+}
+
+.profile {
+
+  margin-bottom: 35px;
+  
+
+}
+
+.nav-menu {
+
+  margin-top: 35px;
+  overflow-y:auto;
+
+}
+
+.sidebar-footer {
+
+  margin-top: auto;
+
+}
+
+.nav-menu i {
+
+  font-size: 22px;
+
+  margin-right: 15px;
+
+}
+
+/* .hero-container{
+
+max-width:900px;
+
+} */
+
+/* Sidebar Scrollbar */
+
+#header::-webkit-scrollbar {
+
+  width: 6px;
+
+}
+
+#header::-webkit-scrollbar-track {
+
+  background: #0d1320;
+
+}
+
+#header::-webkit-scrollbar-thumb {
+
+  background: #149ddd;
+
+  border-radius: 10px;
+
+}
+
+.profile-name{
+
+    font-size:34px;
+
+    line-height:1.2;
+
 }
