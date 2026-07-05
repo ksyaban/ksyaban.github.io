@@ -178,7 +178,7 @@ section {
 
 #main {
     margin-left: var(--sidebar-width);
-    transition: .35s;
+    transition: margin-left .35s ease;
 }
 
 #header.collapsed {
@@ -2172,10 +2172,13 @@ a:hover {
     #hero {
         padding-left: 30px;
         padding-right: 30px;
+        margin-left:0 !important;
+
+        width:100% !important;
     }
 
     #main {
-        margin-left: 0;
+        margin-left: 0 !important;
         width: 100%;
     }
 
