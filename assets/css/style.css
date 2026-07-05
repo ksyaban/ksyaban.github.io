@@ -306,41 +306,6 @@ section {
 }
 
 /*==============================================================
-# About Profile Card
-==============================================================*/
-
-.profile-card{
-    text-align:center;
-    padding:30px 20px;
-}
-
-.profile-image{
-    width:220px;
-    height:220px;
-    object-fit:cover;
-    border-radius:50%;
-    border:6px solid #ffffff;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-    transition:.4s ease;
-}
-
-.profile-image:hover{
-    transform:scale(1.03);
-}
-
-.profile-card h3{
-    margin-top:25px;
-    font-size:1.7rem;
-    font-weight:700;
-    color:var(--secondary);
-}
-
-.profile-card p{
-    margin-top:8px;
-    color:var(--text-light);
-}
-
-/*==============================================================
 # Social Links
 ==============================================================*/
 
